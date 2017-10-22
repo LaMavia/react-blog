@@ -6,6 +6,7 @@
     "@types/react-router": "^4.0.15",
     "@types/react-router-dom": "^4.0.8",
     "@types/uuid": "^3.4.3",
+    "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "materialize": "^1.0.0",
     "react": "^16.0.0",
