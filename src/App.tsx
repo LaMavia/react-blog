@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom'
 // import * as uuid from 'uuid'
 import './App.css'
-import './materialize/css/materialize.min.css'
 const ps = require('./posts.json');
 //Components
 import Nav from './components/Nav'
@@ -19,7 +18,6 @@ Obcaecati, sed, ad consequatur est vitae optio id ea eum nemo cum reprehenderit 
 Aliquid minima consequatur, quas odio similique adipisci officiis hic non autem alias cupiditate cum nesciunt soluta dignissimos debitis nihil eaque itaque nisi ratione accusantium vero quaerat consequuntur? Itaque, esse at.
 Rerum, consequuntur animi alias cumque similique temporibus soluta optio neque, officia culpa quo. Accusamus culpa itaque ipsum temporibus unde eveniet quo, id hic error quaerat sunt reiciendis earum nobis soluta.`*/
 
-const PureComponent = React.PureComponent
 interface post{
   title:string
   text:string
@@ -30,8 +28,12 @@ interface MyApp{
   posts: post[]
   id: string
 }
+interface Pr{
 
-class App extends PureComponent<{},MyApp> {
+}
+export const root = document.location.pathname == "/" ? "" : document.location.pathname
+
+export default class App extends React.PureComponent<Pr,MyApp> {
   constructor(){
     super()
     this.state = {
@@ -86,10 +88,10 @@ class App extends PureComponent<{},MyApp> {
       <Router>
         <div className="App">
           <Nav />
-          <Route path={`/`} exact render={props => (
+          <Route path={`${root}/`} exact render={props => (
             <Posts list={this.state.posts}/>
           )}/>
-          <Route path={`/posts/:id`} exact render={props => (
+          <Route path={`${root}/posts/:id`} exact render={props => (
             <Post psts={this.state.posts} id={props}/>
           )}/>
         </div>
@@ -98,7 +100,6 @@ class App extends PureComponent<{},MyApp> {
   }
 }
 
-export default App;
 
 
 //
