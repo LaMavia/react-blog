@@ -31,7 +31,7 @@ interface MyApp{
 interface Pr{
 
 }
-export const root = `https://lastshadowpl.github.io/react-blog-build`
+export const root = "/react-blog-build"
 
 export default class App extends React.PureComponent<Pr,MyApp> {
   constructor(){
@@ -85,13 +85,13 @@ export default class App extends React.PureComponent<Pr,MyApp> {
 
   render() {
     return (
-      <Router>
+      <Router basename={`${root}`}>
         <div className="App">
           <Nav />
-          <Route path={`${root}/`} exact render={props => (
+          <Route path={`/`} exact render={props => (
             <Posts list={this.state.posts}/>
           )}/>
-          <Route path={`${root}/posts/:id`} exact render={props => (
+          <Route path={`/posts/:id`} exact render={props => (
             <Post psts={this.state.posts} id={props}/>
           )}/>
         </div>

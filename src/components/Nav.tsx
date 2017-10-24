@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import {root} from '../App'
 /*
 * @description Remember to put this component into a <Router> tag 
 * 
@@ -38,7 +37,7 @@ export default class Nav extends React.PureComponent<MyProps, MyState>{
     this.setState({
       routes: this.state._routes.map((r,i) => (
        <li className="nav__list__item" key={i+1}>
-        <Link className="nav__list__item-link white-text" {...(function(){return r.exact ? 'exact' : ''})()} to={`${root + r.path}`} >{r.name}</Link>
+        <Link className="nav__list__item-link white-text" {...(function(){return r.exact ? 'exact' : ''})()} to={r.path} >{r.name}</Link>
        </li> 
       ))
     } as object)

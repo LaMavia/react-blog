@@ -2,7 +2,7 @@ import * as React from 'react'
 // import * as uuid from 'uuid'
 import {Link} from 'react-router-dom'
 import './Posts.min.css'
-import {root} from '../App'
+
 interface MyState{
   _posts: object[]
   posts: HTMLElement[]
@@ -43,7 +43,7 @@ export default class Posts extends React.PureComponent<MyProps,MyState>{
     this.setState({
       posts: this.state._posts.map((it:ListItem,i:number) => (
         <li className="posts__item" key={i}>
-          <Link className="post" to={`${root}/posts/${it.id}`}>
+          <Link className="post" to={`/posts/${it.id}`}>
             <div className="post-header" style={{'--header-color': it.color}}></div>
             <span className="post-title">{it.title}</span>
           </Link>
