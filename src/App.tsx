@@ -31,7 +31,7 @@ interface MyApp{
 interface Pr{
 
 }
-export const root = document.location.pathname == "/" ? "" : document.location.pathname
+export const root = `https://lastshadowpl.github.io/react-blog-build`
 
 export default class App extends React.PureComponent<Pr,MyApp> {
   constructor(){
