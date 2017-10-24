@@ -85,7 +85,7 @@ export default class App extends React.PureComponent<Pr,MyApp> {
 
   render() {
     return (
-      <Router basename={`${root}`}>
+      <Router basename={root} forceRefresh={true}>
         <div className="App">
           <Nav />
           <Route path={`/`} exact render={props => (
